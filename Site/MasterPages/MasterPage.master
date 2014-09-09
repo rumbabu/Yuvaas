@@ -1,0 +1,142 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPages_MasterPage" %>
+
+<%--<%@ Register Assembly="MangoChat" Namespace="ASPNETChatControl" TagPrefix="cc1" %>--%>
+<%@ Register Src="~/UserControls/UserProfile.ascx" TagPrefix="asp" TagName="UserProfile" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Yuvaas</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport">
+     <link href="../Css/StyleSheet.css?V=1.1" rel="stylesheet" type="text/css" />
+    <link href="../Css/ResponsiveStyleSheet.css" rel="stylesheet" type="text/css" />
+    <%--<link type="text/css" rel="Stylesheet" href="../HttpCombiner/HttpCombiner.ashx?s=Set_Css_MasterPage&t=text/css&v=0" />--%>
+     <script src="../Js/jquery.min.js" type="text/javascript"></script>
+    <%--<script type="text/javascript" src="../HttpCombiner/HttpCombiner.ashx?s=Set_Javascript_Jquery&t=type/javascript&v=2">
+    </script>--%>
+    <script src="../Js/jquery-ui.min.js" type="text/javascript"></script>
+   <%-- <script type="text/javascript" src="../HttpCombiner/HttpCombiner.ashx?s=Set_Javascript_UI&t=type/javascript&v=2">
+    </script>--%>
+      <script src="../Js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+    <%--<script type="text/javascript" src="../HttpCombiner/HttpCombiner.ashx?s=Set_Javascript_TouchPunch&t=type/javascript&v=2">
+    </script>--%>
+      <script src="../Js/facescroll.js" type="text/javascript"></script>
+    <%--<script type="text/javascript" src="../HttpCombiner/HttpCombiner.ashx?s=Set_Javascript_FaceScroll&t=type/javascript&v=2">
+    </script>--%>
+    <script src="../Js/modernizr.custom.02212.js" type="text/javascript"></script>
+    <%--<script type="text/javascript" src="../HttpCombiner/HttpCombiner.ashx?s=Set_Javascript_modernizr&t=type/javascript&v=2">
+    </script>--%>
+     <script src="../Js/jquery.lazyload.js" type="text/javascript"></script>
+    <%--<script type="text/javascript" src="../HttpCombiner/HttpCombiner.ashx?s=Set_Javascript_LazyLoad&t=type/javascript&v=2">
+    </script>--%>
+
+    <script src="../Js/Master.js" type="text/javascript"></script>
+    <!-- html5.js for IE less than 9 -->
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+    <!-- css3-mediaqueries.js for IE less than 9 -->
+    <!--[if lt IE 9]>
+	<script src="../Js/ie8.js"></script>
+<![endif]-->
+    <asp:ContentPlaceHolder ID="cphHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="innerbg" onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
+    <form id="form1" runat="server">
+    <input type="hidden" id="hdnTap" value="0" />
+    <div class="main">
+        <div id="menu" class="slidepanel" style="display: none;">
+            <ul id="ulMenu">
+                <li><a href="../Pages/NewsFeed.aspx">News Feed <span>
+                    <img src="../images/news.png" alt="" /></span> </a></li>
+                <li><a href="../Pages/TimeLine.aspx">Wall <span>
+                    <img src="../images/chat.png" alt="" /></span> </a></li>
+                <li><a href="../Pages/Profile.aspx">Profile <span>
+                    <img src="../images/new.png" alt="" /></span> </a></li>
+                <li style="display: none;"><a href="../Pages/Messages.aspx">Messages <span>
+                    <img src="../images/message.png" alt="" /></span> </a></li>
+                <li><a href="../Pages/Friends.aspx">Friends <span>
+                    <img src="../images/user.png" alt="" /></span></a></li>
+                <li><a href="../pages/register.aspx">Logout <span>
+                    <img src="../images/logout1.png" alt="" /></span></a></li>
+            </ul>
+        </div>
+        <div class="headermain">
+            <div class="iphonemenu">
+                <a href="javascript:void(0);" onclick="slideFadeToggle();">
+                    <img src="../images/menuip.png" alt="" /></a></div>
+            <div class="header">
+            <div class="headerprofile">                <img src="../Images/prphoto.png" /></div>
+                <div class="headerleft">
+                    <a href="../Pages/NewsFeed.aspx">
+                        <img style="" src="../images/logo.png" alt="logo" />
+                    </a>
+                </div>
+                <div class="menu">
+                    <%--<span class="fl">
+                        <img src="" id="imgUser" runat="server" style="float: left; width: 30px; height: 30px;border-radius:15px;" />
+                        <a style="color: #fff; float: left; font-size: 12px; font-weight: bold; padding: 8px 20px 0 2px"
+                            href="../Pages/Profile.aspx" id="lnkUserName" runat="server"> </a></span>--%>
+                    <ul>
+                        <li id="liProfile" runat="server" style="width:auto;">
+                            <a style="color: #fff; float: left; font-size: 12px; font-weight: bold; padding:2px 20px 0 2px;width:100%;"
+                            href="../Pages/Profile.aspx">
+                                <span class="menuimg" style="width:30px;"><img src="" id="imgUser" runat="server" style="float: left; width: 30px; height: 30px;border-radius:15px;" /></span>
+                                <span class="menutitle" id="lnkUserName" runat="server" style="width:auto;padding:0 0 0 5px;">&nbsp;</span>
+                            </a>
+                        </li>
+                        <li class="menusel" id="liHome" runat="server"><a href="../Pages/NewsFeed.aspx"><span
+                            class="menuimg">
+                            <%--<img alt="" src="../Images/m1.png" />--%>
+                        </span><span class="menutitle">Home</span></a></li>
+                        <li id="liUserProfile" runat="server" style="display:none;"><a href="../Pages/Profile.aspx"><span class="menuimg">
+                        </span><span class="menutitle">About</span></a></li>
+                        <li id="liMessage" runat="server"><a href="../Pages/Messages.aspx"><span class="menuimg " style="display:none;">
+                          
+                        </span><span class="menutitle">Messages</span></a></li>
+                        <li id="liFriends" runat="server"><a href="../Pages/Friends.aspx"><span class="menuimg " style="display:none;">
+                           
+                        </span><span class="menutitle">Colleagues</span></a></li>
+                        <li id="liSettings" class="menutitle">
+                            <div class="btn_setting_box" style="margin-top: 2px; margin-left: 13px; float: left;">
+                                <a id="btn_setting" class="btn btn_blue btn_setting" style="color: #2d2c2c;"></a>
+                                <ul class="list_setting">
+                                    <li style="background: none; border: none; border-bottom:1px solid #DDDDDD; width: 100%">
+                                        <a style="color: #2d2c2c; width: 100%; text-align: left;text-indent:15px;" id="a2" href="UserInfo.aspx">Update Profile</a>
+                                    </li>
+                                    <li id="liSignOut" style="background: none; border-bottom:1px solid #DDDDDD; border: none; width: 100%">
+                                        <a style="color: #2d2c2c; width: 100%; text-align: left;text-indent:15px;" id="a1" href="../pages/register.aspx">Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="conmain">
+                <div class="innermain">
+                    <asp:UserProfile ID="userProfile" runat="server" />
+                    <asp:ContentPlaceHolder ID="cphBody" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+        <%--<div class="footer_main">
+            <div class="footer">
+                <div class="footer_left">
+                    &copy; 2014 Yuvaas.</div>
+                <div class="footer_right">
+                    Powered by <a href="http://www.winitsoftware.com/" target="_blank" class="headerlinks">
+                        WINIT</a>
+                </div>
+            </div>
+        </div>--%>
+    </div>
+    <%--<cc1:ChatControl ID="ChatControl1" runat="server" GroupsEnabled="false" HideOfflineUsers="true"
+        DefaultChatDialogState="Maximized" MessageRememberCount="-1">
+    </cc1:ChatControl>--%>
+    </form>
+</body>
+</html>

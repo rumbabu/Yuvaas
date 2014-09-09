@@ -1,0 +1,3 @@
+﻿function bindProfile() { 
+    //To do.
+}

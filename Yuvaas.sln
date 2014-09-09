@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLayer", "BusinessLayer", "{E952AD82-DCB6-42AB-B947-FB65333CF052}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataLayer", "DataLayer", "{CB7E6539-16AD-4CFF-B29F-4E9E7E003239}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessObjects", "BusinessObjects", "{FB9F8485-1E63-4B5C-9A2F-790AE8C35A9A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Facade", "Facade", "{EFA06496-2555-45B1-8842-44AD1EE96E25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataObjects", "DataObjects", "{DFBAFDD8-BA05-4022-ABAE-EC9B6049B704}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessObjects", "Components\BusinessObjects\BusinessObjects.csproj", "{3A7BB5DD-7ABB-43DB-BDAB-68BD99E0E2FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataObjects", "Components\DataObjects\DataObjects.csproj", "{FE16E821-E613-4C41-9452-F6B7CB7CAF12}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3A7BB5DD-7ABB-43DB-BDAB-68BD99E0E2FE} = {3A7BB5DD-7ABB-43DB-BDAB-68BD99E0E2FE}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facade", "Components\Facade\Facade.csproj", "{87882AE2-D417-4F12-BA5F-116B92346DAF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FE16E821-E613-4C41-9452-F6B7CB7CAF12} = {FE16E821-E613-4C41-9452-F6B7CB7CAF12}
+		{3A7BB5DD-7ABB-43DB-BDAB-68BD99E0E2FE} = {3A7BB5DD-7ABB-43DB-BDAB-68BD99E0E2FE}
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Yuvaas", "http://localhost/Yuvaas", "{0F36498D-7ABE-4156-8106-77F7DCFA4528}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{3A7BB5DD-7ABB-43DB-BDAB-68BD99E0E2FE}|BusinessObjects.dll;{FE16E821-E613-4C41-9452-F6B7CB7CAF12}|DataObjects.dll;{87882AE2-D417-4F12-BA5F-116B92346DAF}|Facade.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/Yuvaas"
+		Debug.AspNetCompiler.PhysicalPath = "Site\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Yuvaas\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Yuvaas"
+		Release.AspNetCompiler.PhysicalPath = "Site\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Yuvaas\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\Yuvaas\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A7BB5DD-7ABB-43DB-BDAB-68BD99E0E2FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A7BB5DD-7ABB-43DB-BDAB-68BD99E0E2FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A7BB5DD-7ABB-43DB-BDAB-68BD99E0E2FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A7BB5DD-7ABB-43DB-BDAB-68BD99E0E2FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE16E821-E613-4C41-9452-F6B7CB7CAF12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE16E821-E613-4C41-9452-F6B7CB7CAF12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE16E821-E613-4C41-9452-F6B7CB7CAF12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE16E821-E613-4C41-9452-F6B7CB7CAF12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87882AE2-D417-4F12-BA5F-116B92346DAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87882AE2-D417-4F12-BA5F-116B92346DAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87882AE2-D417-4F12-BA5F-116B92346DAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87882AE2-D417-4F12-BA5F-116B92346DAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F36498D-7ABE-4156-8106-77F7DCFA4528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F36498D-7ABE-4156-8106-77F7DCFA4528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F36498D-7ABE-4156-8106-77F7DCFA4528}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F36498D-7ABE-4156-8106-77F7DCFA4528}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FB9F8485-1E63-4B5C-9A2F-790AE8C35A9A} = {E952AD82-DCB6-42AB-B947-FB65333CF052}
+		{EFA06496-2555-45B1-8842-44AD1EE96E25} = {E952AD82-DCB6-42AB-B947-FB65333CF052}
+		{DFBAFDD8-BA05-4022-ABAE-EC9B6049B704} = {CB7E6539-16AD-4CFF-B29F-4E9E7E003239}
+		{3A7BB5DD-7ABB-43DB-BDAB-68BD99E0E2FE} = {FB9F8485-1E63-4B5C-9A2F-790AE8C35A9A}
+		{87882AE2-D417-4F12-BA5F-116B92346DAF} = {EFA06496-2555-45B1-8842-44AD1EE96E25}
+		{FE16E821-E613-4C41-9452-F6B7CB7CAF12} = {DFBAFDD8-BA05-4022-ABAE-EC9B6049B704}
+	EndGlobalSection
+EndGlobal

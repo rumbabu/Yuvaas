@@ -1,0 +1,165 @@
+﻿@media all and (max-width:1024px)
+{    
+    .container{width:100%;}
+    .header{width:96%;padding:0% 2%;margin:0px;float:left;}
+    .innermain{width:100%;margin:0px;padding:0px;}
+    .footer{width:96%;padding:0 2%;}
+    .footer_left{width:64%;}
+    .footer_right{width:auto;}
+    .uparrow { background: url("../images/uparrow.png"); background-position: 0 -49px; background-repeat: no-repeat; background-size: auto auto; display: block; float: left; height: 6px;  left:188px; position: absolute; text-align: right; top:77px; width: 100%;}
+}
+    
+    
+@media all and (max-width:786px)
+{  
+    .chatfld{display:none;}
+    .headerleft{width:220px;padding:11px 0 0 0;}
+    .listfrnds{height:100%;}
+    .innerleft{width:25%;}
+    .innerright{width:73%;}
+    .psbox{width:100%;}
+    .upimg{width:98%;margin:0px;padding:0.3em 1%;}
+    .feed{width:98%;padding:0.5em 1%;}
+    .feedleft{width:10%;}
+    .limain{width:96%;padding:0.3em 2%;}
+    .combox{width:100%;}
+    .formmain {float: left; font-size: 13px; margin: 0 0 10px; width: 100%;}
+    .formmain img{width:100px;height:100px;margin:0% 0% 0% 2%;}
+    .formmain input{ float:left; width:94%; margin:0px 0px 2% 0px; font-size:13px;border: 1px solid #A4A9B2; border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset;  height: 30px;  margin: 0 auto 8px;  padding: 0 9px;}
+    .formmain select{ float:left; width:94%; margin:0px 0px 10px 0px; font-size:13px;border: 1px solid #A4A9B2; border-radius: 3px 3px 3px 3px;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset;  height: 31px;  margin:10px auto 8px;  padding: 5px 9px;}
+    .Name { float: left;margin-right: 2%; margin-top: 5px; text-align: left;  width: 100%;}
+    .nametextfield { float: left; width: 95%; text-align:left;}
+    .abouttextarea{width: 100%; height: 48px;}
+    .gmain{float:left;width:96%;margin:2% 0% 5% 0%;}
+    .gnamemale{ float: left; margin-top:6px; width:25%;}
+    .wallinner{float:left;width:100%;background:#FFF;border-radius: 3px 3px 3px 3px;margin-bottom:2%;}
+    .uparrow { background: url("../images/uparrow.png"); background-position: 0 -49px; background-repeat: no-repeat; background-size: auto auto; display: block; float: left; height: 6px;  left: 30%; position: absolute; text-align: right; top:7.5%; width: 100%;}
+}
+
+
+ @media all and (max-width:480px)
+{   
+    .menu{display:none;}
+    .header{width:85%;margin:0.1em 0 0 0;}
+    .headerleft{width:100%;text-align:center;padding:11px 0px 0px 0px;}
+    .iphonemenu{display:block;}
+    .loginmain{width:100%;margin:4% auto;}
+    .loginmiddle{width:89%;padding:2% 3%;margin:2%;}
+    .logintop{width:100%;}
+    .logintitle{width:100%;}
+    .loginformrep{width:100%;margin:0 0 10px;}
+    .loginformrep input{width:96%;padding:0% 2%;margin:0px;}
+    .loginformrep select{width:100%;padding:5px 2%;margin:0px;}
+    .loginbtn{margin:0 0 0 40%;}
+    .webclass{margin:0px;}
+    .headerleft img{width:246px;}
+    .postdate{width:100%;}
+    
+    .chatfld{display:none;}
+    .innerleft{display:none;}
+    .innerright{width:100%;}
+    .psbox{width:100%;background:#fff;margin:0px;}
+    .mhht{width:95.5%;margin:0 2%;}
+    .upimg{width:96%;padding:0.5em 2%;margin:0px;background:#ffffff;}
+    .feeds{width:100%;padding:0.5em 0%;/*margin:0.5em 0 0 0;*/float:left;/*background:#ffffff;*/}
+    .feed{width:96%;padding:0.3em 2%;background:#fff;margin:0 0 0.3em 0;}
+    .feedleft{width:20%;padding:0%;}
+    .feedright{width:80%;}
+    .limain{width:100%;padding:0px;}
+    .like{padding:0px;}
+    .combox{width:100%;}
+    .combox textarea{width:96%;padding:0.3em 2%;}
+   
+    .compre{width:96%;padding:2%;}
+    .comprep{width:100%;padding:0px;}
+   
+    .cmmtimg{width:19%;}
+    .cmmtdesc{width:80%;}
+    .comdel{width:100%;}
+    .coml{width:100%;}
+   
+    .btn_silvernnnn{width:90%;margin:0.5em 1%;font-size:11px;}
+    .listfrnds{height:100%;margin:0px;width:96%;background:#ffffff;padding:0.5em 2%;}
+    .profiledesc{width:100%;margin:0px;}
+    .profiledesc label{width:100%;margin:0 0 0.5em 0em;}
+    .iphonemenu{width:7%;margin-top:0.3em;}
+   
+    .wallinner{float:left;width:100%;background:#FFF;border-radius: 3px 3px 3px 3px;margin-bottom:2%;}
+    .uinfoImg{width:17%;}
+    .fridetail{width:68%;}
+    .frndbtn{width:12%;}
+    .addfrndnn{margin:0px;float:left;}
+    /*.btn_silvernn{background:url(../Images/req.png) no-repeat;}*/
+    .updatestatus{width:99.5%;margin:0.75em 0%;}
+    .updatestatus ul{width:100%;}
+    .updatestatus ul li{width:50%;}
+    .updatestatus ul li:first-child{width:49.5%;}
+    .uparrow { background: url("../images/uparrow.png"); background-position: 0 -49px; background-repeat: no-repeat; background-size: auto auto; display: block; float: left; height: 6px;  left: 4%; position: absolute; text-align: right; top: 13%; width: 100%;}
+    
+    
+    .fbbottommainright{width:100%;}
+    .fbbottommainleft{width:100%;}
+    .btn_silvernnnn a{padding:0px 2px;}
+    #ancfrndReq,#ancNewMessage{width:38%;}
+    #ancNoFriends,#ancInbox{width:30%;}
+    #ancFriends,#ancSent{width:25%;}
+    .messagechk{width:5%;}
+    .messagetext{width:40%;}
+    .msgsetting input{margin-left:5px;}
+    .msgbox{ float:left; width:100%; margin:0px 0px 0px 0px;min-height:150px;}
+    .searchfrnd{float: left;font-size: 15px;font-weight: bold; width: 18%;margin-top:5px;background:#063B6D;color:#FFFFFF;padding: 2px;}
+    .nametextfield { float: left; width: 95%; text-align:right;padding:0px 5px;}
+    .formmain{width:80%;}
+}
+
+
+ @media all and (max-width:320px)
+{  
+    .loginmain{margin:30% auto;}
+    .footer_left{width:60%;}
+    .btn_silvernnnn{margin:0.5em 7.3%;width:78%;}
+    .profiledesc span{width:100%;}
+    .iphonemenu{margin-top:2%;}
+    .iphonemenu{width:9%;}
+    .slidepanel ul li a span{left:0px;}
+    .formmain {float: left; font-size: 13px; margin: 0 0 10px; width: 100%;}
+    .formmain img{width:100px;height:100px;margin:0% 0% 0% 2%;}
+    .formmain input{ float:left; width:94%; margin:0px 0px 2% 0px; font-size:13px;border: 1px solid #A4A9B2; border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset;  height: 30px;  margin: 0 auto 8px;  padding: 0 9px;}
+    .formmain select{ float:left; width:94%; margin:0px 0px 10px 0px; font-size:13px;border: 1px solid #A4A9B2; border-radius: 3px 3px 3px 3px;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset;  height: 31px;  margin:10px auto 8px;  padding: 5px 9px;}
+    .Name { float: left;margin-right: 2%; margin-top: 5px; text-align: left;  width: 100%;}
+    .nametextfield { float: left; width: 95%; text-align:left;}
+    .abouttextarea{width: 100%; height: 48px;}
+    .gmain{float:left;width:96%;margin:2% 0% 5% 0%;}
+    .gnamemale{ float: left; margin-top:6px; width:25%;}
+    .wallinner{float:left;width:100%;background:#FFF;border-radius: 3px 3px 3px 3px;margin-bottom:2%;}
+    /*17/06/13*/
+    .usernamemain{float:right;width:100%;}
+    .feedleft{width:40%;padding:0%;}
+    .feedleft a img{}
+    .usernamemain .deletepost{float:left;width:35%;text-align:right;text-decoration:underline;font-size:13px;color:#3B5998;font-weight:normal;}
+    .usernamemain .username{float:left;width:63%;}
+    .feedright{width:80%;float:left;}
+    .feedleft{width:20%;float:left;}
+    .postdate{width:100%; float:left;}
+    .uparrow { background: url("../images/uparrow.png"); background-position: 0 -49px; background-repeat: no-repeat; background-size: auto auto; display: block; float: left; height: 6px;  left: 4%; position: absolute; text-align: right; top: 17.2%; width: 100%;}
+    .uparrow { background: url("../images/uparrow.png"); background-position: 0 -49px; background-repeat: no-repeat; background-size: auto auto; display: block; float: left; height: 6px;  left: 4%; position: absolute; text-align: right; top: 17.2%; width: 100%;}
+    .imggallery{float:left;width:100%;text-align:center;}
+    .imggallery img{float:left;height:200px;text-align:center;width:250px;margin:0 0 0 10%;}
+    .btn_silvernnnn a{padding:0px 2px;}
+    #ancfrndReq,#ancNewMessage{width:38%;}
+    #ancNoFriends,#ancInbox{width:30%;}
+    #ancFriends,#ancSent{width:25%;}
+    .messagechk{width:5%;}
+    .messagetext{width:40%;}
+    .msgsetting input{margin-left:5px;}
+    .msgbox{ float:left; width:100%; margin:0px 0px 0px 0px;min-height:150px;}
+    .searchfrnd{float: left;font-size: 15px;font-weight: bold; width: 18%;margin-top:5px;background:#063B6D;color:#FFFFFF;padding: 2px;}
+    .nametextfield { float: left; width: 95%; text-align:right;padding:0px 5px;}
+    .formmain{width:80%;}
+    .comntlhs{float:left;width:17%;}
+    .comntrhs{float:left;width:83%;}
+    .loginbtn{margin:2% 0 0 32%;}
+    
+}
