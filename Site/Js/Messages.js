@@ -1,5 +1,6 @@
 ﻿var MsgPageSize = 20, MsgCurrentPageIndex = 0, MsgMaxPageCount = 0;
 $(document).ready(function () {
+    BindDropDown();
     $("#" + divSentBox).html('');
     $(window.parent.document).scroll(function () { GetNextMessageList(); });
 });
@@ -19,7 +20,6 @@ function PostMessage() {
             success: function () {
                 $(".chzn-choices .search-choice").remove();
                 $("#txtMessage").val('');
-                BindDropDown();
                 GetAllMessagesofInbox();
             },
             failure: function () { }

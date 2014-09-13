@@ -8,12 +8,12 @@
     <script type="text/javascript">
         var userid = '<%= Session["UserId"].ToString().ToLower() %>';
     </script>
-    <div class="innerright">
+    <div class="innerright" style="width:73%;">
         <div class="wallinner">
             <div class="btn_silvernnnn">
-                <a id="ancfrndReq" onclick="return BindFriendRequests();">Colleague Requests</a>
-                <a id="ancNoFriends" class="frndsel" onclick="return BindNonFriends();">Find Colleagues</a>
-                <a style="border: none;" id="ancFriends" onclick="return BindFriends();">Colleagues</a>
+                <a id="ancfrndReq" onclick="return BindFriendRequests();">Friend Requests</a>
+                <a id="ancNoFriends" class="frndsel" onclick="return BindNonFriends();">Find Friends</a>
+                <a style="border: none;" id="ancFriends" onclick="return BindFriends();">Friends</a>
             </div>
             <div class="ppmain">
                 <div class="wid100p" id="divSearch">

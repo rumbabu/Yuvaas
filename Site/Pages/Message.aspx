@@ -2,9 +2,8 @@
     AutoEventWireup="true" CodeFile="Message.aspx.cs" Inherits="Pages_Message" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="cphBody" runat="Server">
-    <script src="../Js/Message.js" type="text/javascript"></script>
     <link href="../Js/Choosen/chosen.css" rel="stylesheet" type="text/css" />
-    <script src="../Js/Choosen/chosen.jquery.min.js" type="text/javascript"></script>
+    
     <div class="innerright">
         <div class="wallinner">
             <%--<div class="fbtop">
@@ -83,6 +82,8 @@
         </div>
     </div>
     <asp:HiddenField ID="hdnLoggedInUsername" runat="server" />
+    <script src="../Js/Message.js" type="text/javascript"></script>
+    <script src="../Js/Choosen/chosen.jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(".chzn-select").chosen();
         var hdnLoggedInUsername = '<%=hdnLoggedInUsername.ClientID %>';

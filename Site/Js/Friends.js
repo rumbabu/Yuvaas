@@ -35,7 +35,7 @@ function OnFriendsSuccess(friendslist, context) {
     else {
         $('#divFriends').html('');
         $('.norecords').show('');
-        $('#ctl00_cphBody_lblNoRecords').html("No Colleague(s).");
+        $('#ctl00_cphBody_lblNoRecords').html("No Friend(s).");
     }
 }
 function OnFriendsError(friendslist, context)
@@ -72,7 +72,7 @@ function OnFriendsRequestsSuccess(friendslist, context) {
     else {
         $('#divFriends').html('');
         $('.norecords').show('');
-        $('#ctl00_cphBody_lblNoRecords').html("No Colleague Request(s).");
+        $('#ctl00_cphBody_lblNoRecords').html("No Friend Request(s).");
     }
 }
 function OnFriendsRequestsError(friendslist, context)
@@ -120,7 +120,7 @@ function OnGetAllNonFriendsSuccess(userlist, context) {
     else {
         $('#divFriends').html('');
         $('.norecords').show('');
-        $get('ctl00_cphBody_lblNoRecords').innerHTML = "No Colleague(s).";
+        $get('ctl00_cphBody_lblNoRecords').innerHTML = "No Friend(s).";
     }
 }
 

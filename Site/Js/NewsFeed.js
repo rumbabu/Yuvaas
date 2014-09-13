@@ -614,5 +614,4 @@ setInterval("RefreshPageContent();", 30000);
 
 function RefreshPageContent() {
     GetStatusList();
-    GetNextStatusList();
 }

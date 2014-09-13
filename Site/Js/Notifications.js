@@ -41,8 +41,8 @@ function onSuccessGetAllNotifications(Notificationresult, context) {
                     msg = " likes " + result[index].FirstName + " " + result[index].LastName + " comment.";
                 }
 
-                $('#ulNotifications').append('<li><span class="spnimg"><img src="../getImage.aspx?image=../Data/ProfileImages/' + result[index].NUserImage + '&height=28&width=28&Aspect=true&type=1&bgc=ffffff"/></span>' +
-                '<span class="spnmsg"><h5>' + result[index].NFirstName + " " + result[index].NLastName + '</h5>' + msg + '</span></li>');
+                $('#ulNotifications').append('<li><a href="../Pages/Profile.aspx?UserId=' + result[index].NUserId +'" ><span class="spnimg"><img src="../getImage.aspx?image=../Data/ProfileImages/' + result[index].NUserImage + '&height=28&width=28&Aspect=true&type=1&bgc=ffffff"/></span>' +
+                '<span class="spnmsg"><h5>' + result[index].NFirstName + " " + result[index].NLastName + '</h5>' + msg + '</span></a></li>');
             }
         }
     }

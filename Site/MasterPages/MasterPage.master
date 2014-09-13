@@ -7,25 +7,25 @@
 <head runat="server">
     <title>Yuvaas</title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport">
-     <link href="../Css/StyleSheet.css?V=1.1" rel="stylesheet" type="text/css" />
+    <link href="../Css/StyleSheet.css?V=1.1" rel="stylesheet" type="text/css" />
     <link href="../Css/ResponsiveStyleSheet.css" rel="stylesheet" type="text/css" />
     <%--<link type="text/css" rel="Stylesheet" href="../HttpCombiner/HttpCombiner.ashx?s=Set_Css_MasterPage&t=text/css&v=0" />--%>
-     <script src="../Js/jquery.min.js" type="text/javascript"></script>
+    <script src="../Js/jquery.min.js" type="text/javascript"></script>
     <%--<script type="text/javascript" src="../HttpCombiner/HttpCombiner.ashx?s=Set_Javascript_Jquery&t=type/javascript&v=2">
     </script>--%>
     <script src="../Js/jquery-ui.min.js" type="text/javascript"></script>
-   <%-- <script type="text/javascript" src="../HttpCombiner/HttpCombiner.ashx?s=Set_Javascript_UI&t=type/javascript&v=2">
+    <%-- <script type="text/javascript" src="../HttpCombiner/HttpCombiner.ashx?s=Set_Javascript_UI&t=type/javascript&v=2">
     </script>--%>
-      <script src="../Js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+    <script src="../Js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
     <%--<script type="text/javascript" src="../HttpCombiner/HttpCombiner.ashx?s=Set_Javascript_TouchPunch&t=type/javascript&v=2">
     </script>--%>
-      <script src="../Js/facescroll.js" type="text/javascript"></script>
+    <script src="../Js/facescroll.js" type="text/javascript"></script>
     <%--<script type="text/javascript" src="../HttpCombiner/HttpCombiner.ashx?s=Set_Javascript_FaceScroll&t=type/javascript&v=2">
     </script>--%>
     <script src="../Js/modernizr.custom.02212.js" type="text/javascript"></script>
     <%--<script type="text/javascript" src="../HttpCombiner/HttpCombiner.ashx?s=Set_Javascript_modernizr&t=type/javascript&v=2">
     </script>--%>
-     <script src="../Js/jquery.lazyload.js" type="text/javascript"></script>
+    <script src="../Js/jquery.lazyload.js" type="text/javascript"></script>
     <%--<script type="text/javascript" src="../HttpCombiner/HttpCombiner.ashx?s=Set_Javascript_LazyLoad&t=type/javascript&v=2">
     </script>--%>
 
@@ -38,92 +38,166 @@
     <!--[if lt IE 9]>
 	<script src="../Js/ie8.js"></script>
 <![endif]-->
+
+
+    <style>
+        .chatRooms
+        {
+            max-height: 500px;
+            overflow: auto;
+        }
+
+        .chatRoom
+        {
+            width: 100%;
+            height: 250px;
+            border: 1px solid #ccc;
+        }
+
+        .chatMessages
+        {
+            width: 100%;
+            height: 200px;
+            overflow: auto;
+            margin-left: 0px;
+            padding-left: 0px;
+        }
+
+            .chatMessages li
+            {
+                list-style-type: none;
+                padding: 1px;
+            }
+
+        .chatNewMessage
+        {
+            border: 1px solid #ccc;
+            width: 200px;
+            float: left;
+            height: 18px;
+        }
+
+        .chatMessage
+        {
+        }
+
+        .chatSend
+        {
+            float: left;
+        }
+
+        .chat-container
+        {
+            background: none repeat scroll 0 0 #0d630d;
+            border: 1px solid rgba(0, 0, 0, 0.07);
+            height: 300px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 16.5%;
+            z-index: 100;
+        }
+    </style>
+
     <asp:ContentPlaceHolder ID="cphHead" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body class="innerbg" onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
     <form id="form1" runat="server">
-    <input type="hidden" id="hdnTap" value="0" />
-    <div class="main">
-        <div id="menu" class="slidepanel" style="display: none;">
-            <ul id="ulMenu">
-                <li><a href="../Pages/NewsFeed.aspx">News Feed <span>
-                    <img src="../images/news.png" alt="" /></span> </a></li>
-                <li><a href="../Pages/TimeLine.aspx">Wall <span>
-                    <img src="../images/chat.png" alt="" /></span> </a></li>
-                <li><a href="../Pages/Profile.aspx">Profile <span>
-                    <img src="../images/new.png" alt="" /></span> </a></li>
-                <li style="display: none;"><a href="../Pages/Messages.aspx">Messages <span>
-                    <img src="../images/message.png" alt="" /></span> </a></li>
-                <li><a href="../Pages/Friends.aspx">Friends <span>
-                    <img src="../images/user.png" alt="" /></span></a></li>
-                <li><a href="../pages/register.aspx">Logout <span>
-                    <img src="../images/logout1.png" alt="" /></span></a></li>
-            </ul>
-        </div>
-        <div class="headermain">
-            <div class="iphonemenu">
-                <a href="javascript:void(0);" onclick="slideFadeToggle();">
-                    <img src="../images/menuip.png" alt="" /></a></div>
-            <div class="header">
-            <div class="headerprofile">                <img src="../Images/prphoto.png" /></div>
-                <div class="headerleft">
-                    <a href="../Pages/NewsFeed.aspx">
-                        <img style="" src="../images/logo.png" alt="logo" />
-                    </a>
+        <input type="hidden" id="hdnTap" value="0" />
+        <div class="main">
+            <div id="menu" class="slidepanel" style="display: none;">
+                <ul id="ulMenu">
+                    <li><a href="../Pages/NewsFeed.aspx">News Feed <span>
+                        <img src="../images/news.png" alt="" /></span> </a></li>
+                    <li><a href="../Pages/TimeLine.aspx">Wall <span>
+                        <img src="../images/chat.png" alt="" /></span> </a></li>
+                    <li><a href="../Pages/Profile.aspx">Profile <span>
+                        <img src="../images/new.png" alt="" /></span> </a></li>
+                    <li style="display: none;"><a href="../Pages/Messages.aspx">Messages <span>
+                        <img src="../images/message.png" alt="" /></span> </a></li>
+                    <li><a href="../Pages/Friends.aspx">Friends <span>
+                        <img src="../images/user.png" alt="" /></span></a></li>
+                    <li><a href="../pages/register.aspx">Logout <span>
+                        <img src="../images/logout1.png" alt="" /></span></a></li>
+                </ul>
+            </div>
+            <div class="headermain">
+                <div class="iphonemenu">
+                    <a href="javascript:void(0);" onclick="slideFadeToggle();">
+                        <img src="../images/menuip.png" alt="" /></a>
                 </div>
-                <div class="menu">
-                    <%--<span class="fl">
+                <div class="header">
+                    <div class="headerprofile">
+                        <img src="../Images/prphoto.png" />
+                    </div>
+                    <div class="headerleft">
+                        <a href="../Pages/NewsFeed.aspx">
+                            <img style="" src="../images/logo.png" alt="logo" />
+                        </a>
+                    </div>
+                    <div class="menu">
+                        <%--<span class="fl">
                         <img src="" id="imgUser" runat="server" style="float: left; width: 30px; height: 30px;border-radius:15px;" />
                         <a style="color: #fff; float: left; font-size: 12px; font-weight: bold; padding: 8px 20px 0 2px"
                             href="../Pages/Profile.aspx" id="lnkUserName" runat="server"> </a></span>--%>
-                    <ul>
-                        <li id="liProfile" runat="server" style="width:auto;">
-                            <a style="color: #fff; float: left; font-size: 12px; font-weight: bold; padding:2px 20px 0 2px;width:100%;"
-                            href="../Pages/Profile.aspx">
-                                <span class="menuimg" style="width:30px;"><img src="" id="imgUser" runat="server" style="float: left; width: 30px; height: 30px;border-radius:15px;" /></span>
-                                <span class="menutitle" id="lnkUserName" runat="server" style="width:auto;padding:0 0 0 5px;">&nbsp;</span>
-                            </a>
-                        </li>
-                        <li class="menusel" id="liHome" runat="server"><a href="../Pages/NewsFeed.aspx"><span
-                            class="menuimg">
-                            <%--<img alt="" src="../Images/m1.png" />--%>
-                        </span><span class="menutitle">Home</span></a></li>
-                        <li id="liUserProfile" runat="server" style="display:none;"><a href="../Pages/Profile.aspx"><span class="menuimg">
-                        </span><span class="menutitle">About</span></a></li>
-                        <li id="liMessage" runat="server"><a href="../Pages/Messages.aspx"><span class="menuimg " style="display:none;">
-                          
-                        </span><span class="menutitle">Messages</span></a></li>
-                        <li id="liFriends" runat="server"><a href="../Pages/Friends.aspx"><span class="menuimg " style="display:none;">
-                           
-                        </span><span class="menutitle">Colleagues</span></a></li>
-                        <li id="liSettings" class="menutitle">
-                            <div class="btn_setting_box" style="margin-top: 2px; margin-left: 13px; float: left;">
-                                <a id="btn_setting" class="btn btn_blue btn_setting" style="color: #2d2c2c;"></a>
-                                <ul class="list_setting">
-                                    <li style="background: none; border: none; border-bottom:1px solid #DDDDDD; width: 100%">
-                                        <a style="color: #2d2c2c; width: 100%; text-align: left;text-indent:15px;" id="a2" href="UserInfo.aspx">Update Profile</a>
-                                    </li>
-                                    <li id="liSignOut" style="background: none; border-bottom:1px solid #DDDDDD; border: none; width: 100%">
-                                        <a style="color: #2d2c2c; width: 100%; text-align: left;text-indent:15px;" id="a1" href="../pages/register.aspx">Logout</a>
-                                    </li>
+                        <ul>
+                            <li id="liProfile" runat="server" style="width: auto;">
+                                <a style="color: #fff; float: left; font-size: 12px; font-weight: bold; padding: 2px 20px 0 2px; width: 100%;"
+                                    href="../Pages/Profile.aspx">
+                                    <span class="menuimg" style="width: 30px;">
+                                        <img src="" id="imgUser" runat="server" style="float: left; width: 30px; height: 30px; border-radius: 15px;" /></span>
+                                    <span class="menutitle" id="lnkUserName" runat="server" style="width: auto; padding: 0 0 0 5px;">&nbsp;</span>
+                                </a>
+                            </li>
+                            <li class="menusel" id="liHome" runat="server"><a href="../Pages/NewsFeed.aspx"><span
+                                class="menuimg">
+                                <%--<img alt="" src="../Images/m1.png" />--%>
+                            </span><span class="menutitle">Home</span></a></li>
+                            <li id="liUserProfile" runat="server" style="display: none;"><a href="../Pages/Profile.aspx"><span class="menuimg"></span><span class="menutitle">About</span></a></li>
+                            <li id="liMessage" runat="server"><a href="../Pages/Messages.aspx"><span class="menuimg " style="display: none;"></span><span class="menutitle">Messages</span></a></li>
+                            <li id="liFriends" runat="server"><a href="../Pages/Friends.aspx"><span class="menuimg " style="display: none;"></span><span class="menutitle">Friends</span></a></li>
+                            <li id="liSettings" class="menutitle">
+                                <div class="btn_setting_box" style="margin-top: 2px; margin-left: 13px; float: left;">
+                                    <a id="btn_setting" class="btn btn_blue btn_setting" style="color: #2d2c2c;"></a>
+                                    <ul class="list_setting">
+                                        <li style="background: none; border: none; border-bottom: 1px solid #DDDDDD; width: 100%">
+                                            <a style="color: #2d2c2c; width: 100%; text-align: left; text-indent: 15px;" id="a2" href="UserInfo.aspx">Update Profile</a>
+                                        </li>
+                                        <li id="liSignOut" style="background: none; border-bottom: 1px solid #DDDDDD; border: none; width: 100%">
+                                            <a style="color: #2d2c2c; width: 100%; text-align: left; text-indent: 15px;" id="a1" href="../pages/register.aspx">Logout</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="conmain">
+                    <div class="innermain">
+                        <asp:UserProfile ID="userProfile" runat="server" />
+                        <asp:ContentPlaceHolder ID="cphBody" runat="server">
+                        </asp:ContentPlaceHolder>
+                        <div class="innerfeed">
+                            <div class="chatfld" id="divNotifications">
+                                <ul id="ulNotifications">
                                 </ul>
                             </div>
-                        </li>
-                    </ul>
+                            <div class="chat-container">
+                                <div id="chatRooms">
+                                </div>
+                                <div id="chatOnlineContacts">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="container">
-            <div class="conmain">
-                <div class="innermain">
-                    <asp:UserProfile ID="userProfile" runat="server" />
-                    <asp:ContentPlaceHolder ID="cphBody" runat="server">
-                    </asp:ContentPlaceHolder>
-                </div>
-            </div>
-        </div>
-        <%--<div class="footer_main">
+            <%--<div class="footer_main">
             <div class="footer">
                 <div class="footer_left">
                     &copy; 2014 Yuvaas.</div>
@@ -133,10 +207,64 @@
                 </div>
             </div>
         </div>--%>
-    </div>
-    <%--<cc1:ChatControl ID="ChatControl1" runat="server" GroupsEnabled="false" HideOfflineUsers="true"
+        </div>
+        <%--<cc1:ChatControl ID="ChatControl1" runat="server" GroupsEnabled="false" HideOfflineUsers="true"
         DefaultChatDialogState="Maximized" MessageRememberCount="-1">
     </cc1:ChatControl>--%>
+
+
+        <script type="text/javascript" src="../Js/jquery.signalR.js"></script>
+        <script type="text/javascript" src="../Js/jQuery.tmpl.js"></script>
+        <script type="text/javascript" src="../signalr/hubs"></script>
+        <script id="new-online-contacts" type="text/x-jquery-tmpl">
+            <div>
+                <ul>
+                    {{each messageRecipients}}
+        <li id="chatLink${messageRecipientId}">
+            <a href="javascript:;" onclick="javascript:SRChat.initiateChat('${messageRecipientId}','${messageRecipientName}');"><span class="spnimg">
+                <img src="../getImage.aspx?image=../Data/ProfileImages/photo635239933260867138.PNG&amp;height=28&amp;width=28&amp;Aspect=true&amp;type=1&amp;bgc=ffffff"></span><span class="spnmsg"><h5>${messageRecipientName}</h5>
+                    online</span></li>
+                    </a>
+        </li>
+        {{/each}}
+                </ul>
+            </div>
+        </script>
+        <script id="new-chatroom-template" type="text/x-jquery-tmpl">
+            <div id="chatRoom${chatRoomId}" class="chatRoom">
+                <ul id="messages${chatRoomId}" class="chatMessages">
+                </ul>
+                <form id="sendmessage${chatRoomId}" action="#">
+                    <input type="text" id="newmessage${chatRoomId}" class="chatNewMessage" />
+                    <div class="clear"></div>
+                    <input type="button" id="chatsend${chatRoomId}" value="Send" class="chatSend" onclick="javascript: SRChat.sendChatMessage('${chatRoomId}')" />
+                    <input type="button" id="chatend${chatRoomId}" value="End Chat" class="chatSend" onclick="javascript: SRChat.endChat('${chatRoomId}')" />
+                </form>
+            </div>
+        </script>
+        <script id="new-chat-header" type="text/x-jquery-tmpl">
+            <div id="chatRoomHeader${chatRoomId}">
+                {{each messageRecipients}}
+            {{if $index == 0}}
+                ${messageRecipientName}
+            {{else}}
+                , ${messageRecipientName}
+            {{/if}}
+        {{/each}}
+    <div>
+        </script>
+        <script id="new-message-template" type="text/x-jquery-tmpl">
+            <li class="message" id="m-${chatMessageId}">
+                <strong>${displayPrefix}</strong>
+                {{html messageText}}
+            </li>
+        </script>
+        <script id="new-notify-message-template" type="text/x-jquery-tmpl">
+            <li class="message" id="Li1">
+                <strong>{{html messageText}}</strong>
+            </li>
+        </script>
+        <script src="../Js/chat.js"></script>
     </form>
 </body>
 </html>

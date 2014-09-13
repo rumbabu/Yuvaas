@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    BindDropDown();
 });
 
 function PostMessage() {
@@ -17,7 +18,6 @@ function PostMessage() {
             success: function () {
                 $(".chzn-choices .search-choice").remove();
                 $("#txtMessage").val('');
-                BindDropDown();
                 BindRecentMessages();
             },
             failure: function () { }

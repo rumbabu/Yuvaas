@@ -76,10 +76,11 @@ public partial class Pages_Messages : BasePage
         return new MessageFacade().InsertMessage(new Guid(HttpContext.Current.Session["UserId"].ToString()), ToUserNames, MessageDesc);
     }
 
-    [WebMethod]
+    [WebMethod(EnableSession=true)]
     public static List<String> GetAllMembers()
     {
-        return Membership.GetAllUsers().Cast<MembershipUser>().Select(x => x.UserName).Where(x => x.ToLower() != HttpContext.Current.Session["LoginId"].ToString().ToLower()).ToList();
+        //return Membership.GetAllUsers().Cast<MembershipUser>().Select(x => x.UserName).Where(x => x.ToLower() != HttpContext.Current.Session["LoginId"].ToString().ToLower()).ToList();
+        return new UserFacade().GetAllFriendsByUserId( new Guid(Convert.ToString(HttpContext.Current.Session["UserId"]))).Select(x => x.FirstName + " " + x.LastName).ToList();
     }
 
     [WebMethod]
