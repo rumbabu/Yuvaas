@@ -49,7 +49,7 @@ function onSuccessGetStatusList(result, context) {
             //Status Image
             if (StatusList[i].StatusUrl != "") {
                 StatusImageHTML = '<div class="msgbody gallery"><a id="lnkProfileImg" rel="prettyPhoto" title="' + StatusList[i].StatusName + '" href="../getImage.aspx?image=../Data/Images/' + StatusList[i].StatusUrl + '&height=200&width=400&Aspect=true&t=5&bgc=ffffff">' +
-                              '<img class="lazy" src="../Images/dot.png" data-original="../getImage.aspx?image=../Data/Images/' + StatusList[i].StatusUrl + '&height=200&width=400&Aspect=true&t=5&bgc=ffffff"></a></div>';
+                              '<img class="lazy" src="../getImage.aspx?image=../Data/Images/' + StatusList[i].StatusUrl + '&height=200&width=400&Aspect=true&t=5&bgc=ffffff"></a></div>';
             }
 
             //Like
@@ -128,7 +128,7 @@ function onSuccessGetStatusList(result, context) {
                             }
                             //Added By Sojanya to display the comments
                             document.getElementById("divCommentsMain_" + result.d.CommentList[0].StatusId).innerHTML = CommentHTML;
-                            //$(".lazy").show().lazyload({ effect: "fadeIn", effect_speed: 500, event: "load" });
+                            $(".lazy").show().lazyload({ effect: "fadeIn", effect_speed: 500, event: "load" });
                             if (result.d.CommentList.length > 5) {
                                 document.getElementById("ViewComment_" + result.d.CommentList[0].StatusId).style.display = '';
                             }
@@ -140,7 +140,7 @@ function onSuccessGetStatusList(result, context) {
 
             resetGallery();
         }
-        //$(".lazy").show().lazyload({ effect: "fadeIn", effect_speed: 500, event: "load" });
+        $(".lazy").show().lazyload({ effect: "fadeIn", effect_speed: 500, event: "load" });
         _CurrentPageIndex += _PageSize;
     }
     _isLoadMoreTriggered = false;
@@ -192,7 +192,7 @@ function ViewAllComments(StatusId) {
                     }
                     //Added By Sojanya to display the comments
                     document.getElementById("divCommentsMain_" + StatusId).innerHTML = CommentHTML;
-                    //$(".lazy").show().lazyload({ effect: "fadeIn", effect_speed: 500, event: "load" });
+                    $(".lazy").show().lazyload({ effect: "fadeIn", effect_speed: 500, event: "load" });
                 }
             }
         },
@@ -609,9 +609,3 @@ function GetNextStatusList() {
     }
 }
 
-
-setInterval("RefreshPageContent();", 30000);
-
-function RefreshPageContent() {
-    GetStatusList();
-}
